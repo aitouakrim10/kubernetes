@@ -20,17 +20,34 @@ If you're also learning, feel free to use this structure.
 
 ## Study Roadmap
 
+### CKA Course Structure
+
+This repository follows the official CKA study guide structure and converts it into a practical learning track.
+
+1. [Exam Details and Resources](chapters/01-Exam%20Details%20and%20Resources.md)
+2. [Cluster Architecture, Installation, and Configuration](chapters/Cluster%20Architecture,%20Installation,%20and%20Configuration.md)
+3. [Workloads and Scheduling](chapters/03-Workloads%20and%20Scheduling.md)
+4. [Services and Networking](chapters/04-Services%20and%20Networking.md)
+5. [Storage](chapters/05-Storage.md)
+6. [Troubleshooting](chapters/06-Troubleshooting.md)
+7. [Wrapping Up](chapters/07-Wrapping%20Up.md)
+
 ### Phase 1 — CKA (Current Focus)
-- [ ] Core Kubernetes concepts
-- [ ] Pods, Deployments, ReplicaSets
-- [ ] Services, Ingress, DNS
+- [x] Core Kubernetes concepts
+- [x] Pods, Deployments, ReplicaSets
+- [x] Services, Ingress, DNS
 - [ ] ConfigMaps, Secrets
-- [ ] Storage (PV, PVC, StorageClass)
-- [ ] Scheduling, Taints, Tolerations, Affinity
-- [ ] RBAC and Security basics
-- [ ] Troubleshooting clusters and workloads
+- [x] Storage (PV, PVC, StorageClass)
+- [x] Scheduling, Taints, Tolerations, Affinity
+- [x] RBAC and Security basics
+- [x] Troubleshooting clusters and workloads
 - [ ] Practice exams (timed)
 
-
+### Learning method
+- Read the chapter concept
+- Try the commands in a cluster
+- Solve a lab challenge
+- Review exam tips and commands
+- Repeat with timed practice
 
 Become confident with Kubernetes in real scenarios — not just pass exams.
