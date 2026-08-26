@@ -43,11 +43,4 @@ This repository follows the official CKA study guide structure and converts it i
 - [x] Troubleshooting clusters and workloads
 - [ ] Practice exams (timed)
 
-### Learning method
-- Read the chapter concept
-- Try the commands in a cluster
-- Solve a lab challenge
-- Review exam tips and commands
-- Repeat with timed practice
 
-Become confident with Kubernetes in real scenarios — not just pass exams.
