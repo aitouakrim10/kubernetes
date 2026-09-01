@@ -43,4 +43,17 @@ This repository follows the official CKA study guide structure and converts it i
 - [x] Troubleshooting clusters and workloads
 - [ ] Practice exams (timed)
 
+## Labs
+
+I created a dedicated CKA-style lab project at [cka-labs/README.md](cka-labs/README.md).
+
+It contains a 25-lab path focused on exam-relevant Kubernetes domains:
+- Cluster Architecture, Installation, and Configuration
+- Workloads and Scheduling
+- Services and Networking
+- Storage
+- Troubleshooting
+
+The current set includes Labs 1–5 with scenario, solution, and verification steps.
+
 
