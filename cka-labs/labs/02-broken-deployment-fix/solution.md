@@ -3,6 +3,8 @@
 ## Goal
 Diagnose and repair a deployment that is failing readiness due to a broken container configuration.
 
+The setup script already created `cka-lab-02/broken-demo` with two replicas. Do not delete the deployment.
+
 ## Step 1: Inspect deployment and pod events
 
 ```bash
@@ -20,7 +22,7 @@ Common issue in this lab:
 
 ## Step 2: Fix the deployment manifest
 
-Example corrected YAML:
+Correct the probe path in place. For example:
 
 ```yaml
 apiVersion: apps/v1
@@ -47,8 +49,8 @@ spec:
           httpGet:
             path: /
             port: 80
-          initialDelaySeconds: 2
-          periodSeconds: 5
+          initialDelaySeconds: 1
+          periodSeconds: 3
 ```
 
 ```bash

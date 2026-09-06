@@ -4,13 +4,13 @@
 Workloads and Scheduling
 
 ## Scenario
-An application deployment has been rolled out with a broken container configuration. The deployment is not getting ready, and the cluster reports repeated restarts. Your task is to diagnose the problem and repair the deployment without deleting the workload history.
+The setup script has created a deployment with a broken readiness configuration. The deployment is not getting ready. Diagnose and repair it without deleting the deployment.
 
 ## Task
 
-1. Inspect the deployment and its pods.
+1. Inspect the deployment, pod events, and container configuration.
 2. Identify why the application stays unhealthy.
-3. Fix the configuration using a valid Kubernetes manifest.
+3. Fix the deployment in place using a valid manifest or `kubectl edit`.
 4. Ensure the rollout recovers and the deployment becomes ready.
 5. Check the replica count and pod status.
 
@@ -25,6 +25,14 @@ An application deployment has been rolled out with a broken container configurat
 - Deployment shows `READY` according to replicas.
 - Pods are healthy and running.
 - Rollout status completes successfully.
+
+## Start and reset
+
+```bash
+./setup.sh
+```
+
+After solving the task, run `./verify.sh`. Use `./cleanup.sh` to reset the lab.
 
 ## Files
 
