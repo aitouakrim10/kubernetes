@@ -9,9 +9,9 @@ kubectl get deploy -n "$NS" "$APP" >/dev/null
 kubectl get pod -n "$NS" -l app="$APP" -o jsonpath='{.items[0].status.phase}' | grep -q "Running"
 NODE_NAME=$(kubectl get pod -n "$NS" -l app="$APP" -o jsonpath='{.items[0].spec.nodeName}')
 [[ -n "$NODE_NAME" ]]
-NODE_ROLE=$(kubectl get node "$NODE_NAME" -o jsonpath='{.metadata.labels.kubernetes\.io/role}')
-if [[ "$NODE_ROLE" != "worker" ]]; then
-  echo "Pod scheduled on non-worker node: $NODE_NAME"
+LAB_LABEL=$(kubectl get node "$NODE_NAME" -o jsonpath='{.metadata.labels.cka-lab-worker}')
+if [[ "$LAB_LABEL" != "true" ]]; then
+  echo "Pod scheduled on a node without the lab worker label: $NODE_NAME"
   exit 1
 fi
 

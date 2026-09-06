@@ -4,15 +4,14 @@
 Cluster Architecture, Installation, and Configuration
 
 ## Scenario
-A new application is being deployed in the `cka-lab-01` namespace. The pod remains Pending because the scheduler cannot place it correctly. You need to inspect the cluster state, identify the scheduling constraint, and fix the workload so it lands on a valid worker node.
+The setup script has created a namespace and a deployment whose pod cannot be scheduled. Inspect the cluster and fix the workload so it lands on the lab worker node.
 
 ## Task
 
 1. Review the cluster and confirm node status.
-2. Identify the labels or taints that affect pod placement.
-3. Create the namespace `cka-lab-01`.
-4. Deploy a workload that must run on a worker node.
-5. Confirm the pod reaches `Running` and is scheduled on the expected node.
+2. Identify why `nginx-scheduler-demo` is Pending.
+3. Correct the deployment's scheduling rule without changing the node label.
+4. Confirm the pod reaches `Running` and is scheduled on the lab worker node.
 
 ## Constraints
 
@@ -25,6 +24,14 @@ A new application is being deployed in the `cka-lab-01` namespace. The pod remai
 - Namespace exists.
 - Pod is scheduled and is `Running`.
 - Node selector or affinity is valid.
+
+## Start and reset
+
+```bash
+./setup.sh
+```
+
+After solving the task, run `./verify.sh`. Use `./cleanup.sh` to reset the lab.
 
 ## Files
 
