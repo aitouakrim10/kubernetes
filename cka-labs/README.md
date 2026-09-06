@@ -40,16 +40,17 @@ The full planned set is 25 hands-on labs.
 
 ## Current set
 
-This repository currently contains Labs 1–5 as exam-style scenarios with:
+This repository contains Labs 1–5 as repeatable, hands-on scenarios with:
 
-- a realistic task description
-- a guided solution
-- a verification script
+- a setup script that creates the initial environment and broken state
+- a task description that does not reveal the fix
+- a verification script that checks the learner's result
+- a cleanup script so the lab can be run again
 
 ## Folder structure
 
 ```text
-lab/cka-labs/
+cka-labs/
 ├── README.md
 ├── labs/
 │   ├── 01-cluster-health-and-node-placement/
@@ -62,17 +63,21 @@ lab/cka-labs/
 
 Each lab includes:
 
-- README.md — scenario and task instructions
-- solution.md — exact commands and YAML
-- verify.sh — automated validation for the expected state
+- `README.md` — scenario and task instructions
+- `setup.sh` — creates the namespace and initial state
+- `solution.md` — exact commands and YAML, to read after attempting the lab
+- `verify.sh` — automated validation for the expected state
+- `cleanup.sh` — removes resources created by the lab
 
 ## Usage
 
-1. Start from a working Kubernetes cluster with kubectl configured.
-2. Read the scenario in the lab directory.
-3. Solve it on the cluster.
-4. Run the lab verification script.
-5. Compare your result with the solution.
+1. Start a Kubernetes cluster and configure `kubectl` for it. A single-node cluster works for Labs 1, 2 and 4; Labs 3 and 5 need permission to label/taint a node and create a local PersistentVolume.
+2. Run `./setup.sh` from the lab directory. This is the only preparation required.
+3. Read the scenario and solve it without opening `solution.md`.
+4. Run `./verify.sh` from the lab directory.
+5. Compare your result with `solution.md`, then run `./cleanup.sh` before repeating the lab.
+
+Every setup script refuses to run without `kubectl`, checks cluster access, and is safe to run again after cleanup. The scripts create only resources prefixed or namespaced for their lab; the node labels and taints used by Labs 1, 3 and 5 are removed by cleanup.
 
 ## Expected exam mindset
 
