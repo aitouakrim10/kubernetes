@@ -47,11 +47,14 @@ This repository contains Labs 1–5 as repeatable, hands-on scenarios with:
 - a verification script that checks the learner's result
 - a cleanup script so the lab can be run again
 
+For a game-like progression through the same Kubernetes skills, see [`exercices/`](exercices/README.md). It contains 12 levels, including 8 runnable missions and 4 advanced briefs covering workloads, Services, networking, storage, RBAC and troubleshooting.
+
 ## Folder structure
 
 ```text
 cka-labs/
 ├── README.md
+├── exercices/
 ├── labs/
 │   ├── 01-cluster-health-and-node-placement/
 │   ├── 02-broken-deployment-fix/
