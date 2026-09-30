@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: web
-        image: nginx:1.14
+        image: nginx:1.24
         readinessProbe:
           httpGet: {path: /missing, port: 8080}
 EOF
